@@ -1,67 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SharpSide — Live Track Record</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SharpSide — All Picks</title>
 <style>
 :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--tx:#e6edf3;--mut:#8b949e;--pos:#3fb950;--neg:#f85149;--acc:#58a6ff;}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;padding:40px 24px;max-width:760px;margin:0 auto}
-h1{font-size:26px;margin:0 0 8px;font-weight:700}
-.subtitle{color:var(--mut);font-size:14px;margin-bottom:36px}
-.dashboards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
-@media(max-width:520px){.dashboards{grid-template-columns:1fr}}
-.dash-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:24px;text-decoration:none;color:var(--tx);transition:border-color .15s}
-.dash-card:hover{border-color:var(--acc)}
-.hero{display:block;border-color:var(--acc);margin-bottom:16px}
-.hero h2{font-size:18px}.hero p{font-size:14px;max-width:560px}
-.dash-card .icon{font-size:28px;margin-bottom:12px}
-.dash-card h2{font-size:16px;margin:0 0 6px;font-weight:600}
-.dash-card p{font-size:13px;color:var(--mut);margin:0}
-.how{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:24px;margin-bottom:32px}
-.how h3{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:0 0 16px}
-.how p{font-size:14px;color:var(--mut);margin:0 0 10px}
-.how p:last-child{margin:0}
-.how strong{color:var(--tx)}
-.updated{font-size:12px;color:var(--mut);margin-bottom:8px}
-footer{font-size:12px;color:var(--mut);border-top:1px solid var(--bd);padding-top:16px}
-</style>
-</head>
-<body>
-
-<h1>SharpSide</h1>
-<div class="subtitle">Sharp lines. Proven edge. — Automated edge detection across sportsbooks and prediction markets.</div>
-
-<a class="dash-card hero" href="all-picks.html">
-  <div class="icon">🏆</div>
-  <h2>All Picks — Combined Track Record</h2>
-  <p>Every flagged bet across Kalshi and sportsbooks in one view. Beat-the-close %, avg CLV, and ROI across both venues.</p>
-</a>
-
-<div class="dashboards">
-  <a class="dash-card" href="props.html">
-    <div class="icon">⚾</div>
-    <h2>Kalshi Props</h2>
-    <p>Pitcher strikeouts on Kalshi prediction markets vs. sportsbook consensus.</p>
-  </a>
-  <a class="dash-card" href="sportsbook.html">
-    <div class="icon">📊</div>
-    <h2>Sportsbook Gaps</h2>
-    <p>MLB/NHL moneyline, spreads, totals — soft books vs. sharp anchor.</p>
-  </a>
-</div>
-
-<div class="how">
-  <h3>How to read this</h3>
-  <p><strong>CLV (Closing Line Value)</strong> — did we get a better price than the market's final estimate before game time? Each pick is compared against the sharp closing line, not just whether it won.</p>
-  <p><strong>Beat-the-close %</strong> — the primary edge metric. Random = 50%. At 50+ picks, beat-the-close above the threshold for that sample size (63% at n=50, 57% at n=200) indicates a real, systematic edge at p&lt;0.05.</p>
-  <p><strong>Why CLV beats ROI</strong> — win/loss at small samples is noise. CLV converges 3–5× faster and proves the process is sound regardless of short-term results.</p>
-  <p><strong>Timestamps</strong> — all picks are posted to Discord before first pitch. Discord timestamps are immutable and publicly verifiable.</p>
-</div>
-
-<div class="updated">Last updated: May 31 2026 at 5:06 PM PT</div>
-<footer>Educational data only. Not financial or betting advice. Paper trades only — no real money.</footer>
-
-</body>
-</html>
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:32px}
+h1{font-size:22px;margin:0 0 4px}.meta{color:var(--mut);font-size:13px;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:32px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.card .lbl{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.card .val{font-size:28px;font-weight:700;margin:6px 0 2px}.card .sub{color:var(--mut);font-size:12px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.muted,.pend{color:var(--mut)}
+.note{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.3);border-radius:8px;padding:12px 16px;color:var(--mut);font-size:13px;margin-bottom:24px}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:28px 0 10px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);border-radius:10px;overflow:hidden;font-size:13px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--bd)}th{color:var(--mut);font-weight:600;background:#11161d}
+tr:last-child td{border-bottom:none}
+.badge{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;background:#21262d}
+.badge.pos{background:rgba(63,185,80,.15)}.badge.neg{background:rgba(248,81,73,.15)}
+</style></head><body>
+<h1>SharpSide — All Picks</h1>
+<div class="meta">Generated 2026-06-01 01:43 UTC · sportsbook + Kalshi props combined · ¼ Kelly staking</div>
+<div class="note"><b>Read CLV first.</b> Beating the closing line proves edge before ROI converges. 📊 = sportsbook (FanDuel/DK/etc) · ⚾ = Kalshi prediction market</div>
+<div class="grid"><div class="card"><div class="lbl">Net P&amp;L</div><div class="val"><span class="pos">+3.19u</span></div><div class="sub">6.8u staked</div></div><div class="card"><div class="lbl">ROI</div><div class="val"><span class="pos">+47.16%</span></div><div class="sub">return on turnover</div></div><div class="card"><div class="lbl">Beat the Close</div><div class="val">100.0%</div><div class="sub">6 picks w/ CLV</div></div><div class="card"><div class="lbl">Avg CLV</div><div class="val"><span class="pos">+7.12%</span></div><div class="sub">the leading indicator</div></div><div class="card"><div class="lbl">Hit Rate</div><div class="val">57.1%</div><div class="sub">4W / 3L</div></div><div class="card"><div class="lbl">Total Picks</div><div class="val">7</div><div class="sub">7 settled · 0 pending</div></div></div>
+<h2>All Picks (latest 50)</h2>
+<table><thead><tr><th>Date</th><th>Pick</th><th>Venue</th><th>Sport</th><th>True Prob</th><th>Entry EV</th><th>Stake</th><th>P&amp;L</th><th>CLV</th><th>Result</th><th>Status</th></tr></thead>
+<tbody><tr><td>2026-05-31</td><td>⚾ Keider Montero 3.5+ Ks</td><td>Kalshi 43¢</td><td>MLB</td><td>50.7%</td><td>+12.66%</td><td>2.59u</td><td><span class="pos">+3.17u</span></td><td>—</td><td>4 Ks ✓ (line 3.5)</td><td><span class="badge pos">won</span></td></tr><tr><td>2026-05-31</td><td>📊 Padres/Nationals Over 9.5</td><td>FanDuel +100</td><td>MLB</td><td>51.7%</td><td>+3.37%</td><td>0.84u</td><td><span class="neg">-0.84u</span></td><td><span class="pos">+3.38%</span></td><td>Padres 2, Nationals 4 (total 6)</td><td><span class="badge neg">lost</span></td></tr><tr><td>2026-05-31</td><td>📊 Rays -1.5 vs Angels</td><td>FanDuel +104</td><td>MLB</td><td>50.0%</td><td>+2.00%</td><td>0.48u</td><td><span class="pos">+0.50u</span></td><td><span class="pos">+2.00%</span></td><td>Angels 2, Rays 5</td><td><span class="badge pos">won</span></td></tr><tr><td>2026-05-31</td><td>📊 Brewers -1.5 vs Astros</td><td>MyBookie.ag -107</td><td>MLB</td><td>53.3%</td><td>+3.19%</td><td>0.85u</td><td><span class="pos">+0.80u</span></td><td><span class="pos">+3.06%</span></td><td>Brewers 2, Astros 0</td><td><span class="badge pos">won</span></td></tr><tr><td>2026-05-31</td><td>⚾ Tatsuya Imai 5.5+ Ks</td><td>Kalshi 34¢</td><td>MLB</td><td>38.0%</td><td>+5.49%</td><td>0.77u</td><td><span class="neg">-0.77u</span></td><td><span class="pos">+29.26%</span></td><td>5 Ks ✗ (line 5.5)</td><td><span class="badge neg">lost</span></td></tr><tr><td>2026-05-31</td><td>⚾ Sean Burke 5.5+ Ks</td><td>Kalshi 42¢</td><td>MLB</td><td>45.5%</td><td>+3.49%</td><td>0.69u</td><td><span class="pos">+0.87u</span></td><td><span class="pos">+1.20%</span></td><td>6 Ks ✓ (line 5.5)</td><td><span class="badge pos">won</span></td></tr><tr><td>2026-05-31</td><td>📊 Miami Marlins ML</td><td>FanDuel +144</td><td>MLB</td><td>42.2%</td><td>+3.08%</td><td>0.53u</td><td><span class="neg">-0.53u</span></td><td><span class="pos">+3.83%</span></td><td>Marlins 1, Mets 10</td><td><span class="badge neg">lost</span></td></tr></tbody></table>
+</body></html>
